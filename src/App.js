@@ -1,23 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import AppStyles from './App.css';
+import useChat from './hooks/useChat';
+import { useFirestore } from 'reactfire';
 
 function App() {
+  const [msg, setMsg] = useState('');
+  const { msgs } = useChat();
+  const msgColl = useFirestore().collection('msg');
+
+  const handleMsgChange = (e) => {
+    setMsg(e.target.value);
+  }
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    msgColl.add({
+      timestamp: Date.now(),
+      text: msg
+    })
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className={AppStyles.App}>
+      <header className={AppStyles["App-header"]}>
+        <p>Env&iacute;a</p>
+        <form method="POST" onSubmit={handleFormSubmit}>
+          <input name="msg" value={msg} onChange={handleMsgChange} />
+          <button type="submit">{">"}</button>
+        </form>
+        <ul>
+          {msgs.map(m => (
+            <li key={m.id}>{m.text}</li>
+          ))}
+        </ul>
       </header>
     </div>
   );
