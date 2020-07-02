@@ -1,0 +1,106 @@
+html, body {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+#react-root {
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.join-outer-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  align-items: center;
+  background-color: #1A1A1D;
+}
+
+.join-inner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  max-width: 385px;
+  margin-bottom: 65px;
+  min-width: 244px;
+}
+
+.heading {
+  color: white;
+  font-size: 2.5em;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
+}
+
+.input {
+  position: relative;
+  background: var(--sbm-bg-2);
+  border: 1px solid var(--sbm-border-1);
+  border-radius: 20px ;
+  display: block ;
+  padding: 10px ;
+  max-height: 42px ;
+  width: 100% ;
+  min-width: 244px ;
+  font-size: 1rem ;
+  font-weight: 400 ;
+  line-height: 1.5 ;
+  color: var(--sbm-txt-1) ;
+  background-clip: padding-box ;
+  transition: border-color 0.15s ease-in-out, 
+    box-shadow 0.15s ease-in-out ;
+  float: left;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
+    0 3px 1px -2px rgba(0, 0, 0, 0.12), 
+    0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  padding-right: 0 ;
+  margin-bottom: 16px;
+}
+
+.username-input{
+  width: 80% !important;
+}
+
+.btn {
+  font-family: 'Nunito', sans-serif;
+  text-transform: uppercase;
+  box-shadow: 0px 4.5px #05535fa8;
+  border-radius: 20px;
+  background-color: #1f8999;
+  color: #fff;
+  height: 36px;
+  border: 0;
+  font-size: 12.5px;
+  transition: ease-in-out .22s;
+  cursor: pointer;
+  width: 100%;
+  max-width: 385px;
+  min-width: 244px ;
+}
+
+.btn:hover{
+  background-color: #11555f;
+}
+
+.logo {
+  max-width: 300px;
+  max-height: 300px;
+  min-width: 231px;
+  min-height: 231px;
+  width: 100%;
+  margin-bottom: -48px;
+}
+
+#flechita {
+  margin-left: -11px;
+}
+
+button:focus {
+  outline: 0;
+}
